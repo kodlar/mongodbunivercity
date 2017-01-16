@@ -33,7 +33,8 @@ MongoClient.connect('mongodb://localhost:27017/video', function(err, db) {
         
         if ((title == '') || (year == '') || (imdb == '')) {
             next('Please provide an entry for all fields.');
-        } else {
+        }
+        else {
             db.collection('movies').insertOne(
                 { 'title': title, 'year': year, 'imdb': imdb },
                 function (err, r) {
